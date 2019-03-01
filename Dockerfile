@@ -4,7 +4,7 @@ RUN apk add --no-cache tzdata \
     && echo "Asia/Shanghai" > /etc/timezone
 ADD ./src /job
 WORKDIR /job
-RUN apk --update add --virtual build-dependencies libffi-dev openssl-dev python-dev py-pip build-base \
+RUN apk --update add --virtual build-dependencies libffi-dev openssl-dev python-dev py-pip build-base libxml2 \
   && pip install --upgrade pip \
   && pip install -r requirements.txt \
   && apk del build-dependencies
