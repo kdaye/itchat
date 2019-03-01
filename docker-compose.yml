@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+    itchat:
+     restart: always
+     image: itchat
+     volumes:
+      - ./src/weixin.py:/job/weixin.py
+     container_name: itchat
+     network_mode: bridge
