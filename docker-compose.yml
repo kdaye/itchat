@@ -5,6 +5,6 @@ services:
      restart: always
      image: itchat
      volumes:
-      - ./src/weixin.py:/job/weixin.py
+      - ./src:/job
      container_name: itchat
      network_mode: bridge
