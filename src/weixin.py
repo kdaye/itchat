@@ -32,7 +32,7 @@ def text_reply(msg):
             list = []
             URL = 'https://n.cbg.163.com/?serverid=52'
             html = requests.get(URL).text
-            soup = BeautifulSoup(html, 'lxml')
+            soup = BeautifulSoup(html, 'html.parser')
             for i in soup.find_all("td",class_="c_Red"):
                 list.append(i.get_text())
             msg.user.send(''.join(list))
