@@ -37,7 +37,7 @@ def text_reply(msg):
                 list.append(i.get_text())
             msg.user.send(''.join(list))
         if msg.isAt:
-            if msg.actualNickName == '秦琪（收小弟）':
+            if msg.actualNickName == '秦琪（广陵散人）':
                 msg.user.send(u'@%s\u2005 %s' % (
                     msg.actualNickName, '我可爱的徒弟,你要加油哦 คิดถึง '))
             if msg['ActualUserName'] == '@235c7d8b2b7dbe62ec357a8836eb4b02fe2fd21634a733a155c5cea3fd7a7979':
