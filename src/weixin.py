@@ -70,10 +70,12 @@ def text_reply(msg):
                 i = int(i)
                 total = total + i
             print('铜总量:',total,"万",",总价值",total*jiage,"RMB")
-            f = open("history.txt", "w", encoding="utf-8")
+            f = open("history.txt", "a+", encoding="utf-8")
             shijian = time.strftime('%Y-%m-%d %H:%M:%S')
-            history = [shijian,total,jiage]
-            f.writelines(["\n",history])
+            total = str(total)
+            jiage = str(jiage)
+            history = shijian+' '+total+' '+jiage
+            f.write(history+'\n')           
             f.close()
             '''
             msg.user.send(u'%s \n 约等于:%s元 线下:%s元 \n 铜总量:%s万 \n 总价值:%sRMB' % (

@@ -1,6 +1,6 @@
 #coding=utf-8
 from bs4 import BeautifulSoup
-import requests, re
+import requests, re, time
 
 list = []
 danjialist = []
@@ -45,4 +45,10 @@ for page in range(times+1):
     total = total + i
 print('铜总量:',total,"万",",总价值",total*jiage,"RMB")
 
-
+f = open("./src/history.txt", "a+", encoding="utf-8")
+shijian = time.strftime('%Y-%m-%d %H:%M:%S')
+total = str(total)
+jiage = str(jiage)
+history = shijian+' '+total+' '+jiage
+f.write(history+'\n')
+f.close()
