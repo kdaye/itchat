@@ -70,7 +70,7 @@ def text_reply(msg):
                 i = int(i)
                 total = total + i
             print('铜总量:',total,"万",",总价值",total*jiage,"RMB")
-            msg.user.sent(u'%s \n 约等于:%s元 线下:%s元 \n 铜总量:%s万 总价值:%sRMB' % (
+            msg.user.send(u'%s \n 约等于:%s元 线下:%s元 \n 铜总量:%s万 总价值:%sRMB' % (
              ''.join(list[0:10]),jiage,xianxia,total,total*jiage))
         if msg.isAt:
             if msg.actualNickName == '秦琪（广陵散人）':
