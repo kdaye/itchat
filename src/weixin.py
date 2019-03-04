@@ -70,8 +70,15 @@ def text_reply(msg):
                 i = int(i)
                 total = total + i
             print('铜总量:',total,"万",",总价值",total*jiage,"RMB")
-            msg.user.send(u'%s \n 约等于:%s元 线下:%s元 \n 铜总量:%s万\n 总价值:%s RMB' % (
+            f = open("history.txt", "w", encoding="utf-8")
+            time = time.strftime('%Y-%m-%d %H:%M:%S')
+            history = [time,total,jiage]
+            f.writelines(["\n",history])
+            f.close()
+            '''
+            msg.user.send(u'%s \n 约等于:%s元 线下:%s元 \n 铜总量:%s万 \n 总价值:%sRMB' % (
              ''.join(list[0:10]),jiage,xianxia,total,total*jiage))
+            '''
         if msg.isAt:
             if msg.actualNickName == '秦琪（广陵散人）':
                 msg.user.send(u'@%s\u2005 %s' % (
