@@ -71,8 +71,8 @@ def text_reply(msg):
                 total = total + i
             print('铜总量:',total,"万",",总价值",total*jiage,"RMB")
             f = open("history.txt", "w", encoding="utf-8")
-            time = time.strftime('%Y-%m-%d %H:%M:%S')
-            history = [time,total,jiage]
+            shijian = time.strftime('%Y-%m-%d %H:%M:%S')
+            history = [shijian,total,jiage]
             f.writelines(["\n",history])
             f.close()
             '''
